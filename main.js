@@ -473,7 +473,7 @@ app.get('/lista_clientes', async (req,res) => {
       .from('customers')  // Nombre de tu tabla
       //.select('*, ofertas(*, precios(*)), extras(*,precios(*))');  
       .select('id, nombre, telefono, fecha')
-      .order('fecha', { ascending: true }) // Ordenar por fecha
+      .order('fecha', { ascending: false }) // Ordenar por fecha
       .order('fecha'); 
       
       
