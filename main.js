@@ -370,6 +370,7 @@ app.post('/turno', async (req, res) => {
     const { nombre } = req.body;
     const { telefono } = req.body;
     const { fecha } = req.body;
+    const {adelanto} = req.body;
 
     // Validación básica de datos
         if (!nombre || !telefono || !fecha) {
@@ -385,7 +386,7 @@ app.post('/turno', async (req, res) => {
     
     const { data, error } = await supabase
       .from('agenda')
-      .insert([{ nombre, telefono, fecha},])
+      .insert([{ nombre, telefono, fecha, adelanto},])
       .select(); 
 
      if (error) {
